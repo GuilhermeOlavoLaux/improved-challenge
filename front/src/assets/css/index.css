@@ -1,0 +1,444 @@
+.restaurants {
+  position: relative;
+  height: 100vh;
+}
+
+.restaurants .grey-background {
+  position: absolute;
+  width: 100vw;
+}
+
+.restaurants .restaurants-container {
+  background-color: #292929;
+  height: calc(100% - 60px);
+  padding: 30px;
+}
+
+.restaurants .restaurants-container .locals {
+  margin-bottom: 24px;
+  margin-top: 28px;
+}
+
+.restaurants .restaurants-container .locals h1 {
+  color: #f3aa00;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.restaurants .restaurants-container .locals p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .restaurants .grey-background {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .restaurants {
+    position: relative;
+  }
+  .restaurants .grey-background {
+    position: absolute;
+    width: 100vw;
+  }
+  .restaurants .restaurants-container {
+    background-color: #292929;
+    height: calc(100% - 40px);
+    padding: 20px;
+  }
+}
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.header-container img {
+  width: 96px;
+}
+
+.header-container .arrow-container {
+  position: absolute;
+  left: 0;
+  z-index: 20;
+}
+
+.header-container .arrow-container svg {
+  cursor: pointer;
+}
+
+.restaurant-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.restaurant-card img {
+  height: 36px;
+  cursor: pointer;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.restaurant-card .restaurant-card-container {
+  background-color: #333333;
+  color: #fff;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 8px;
+  width: 60%;
+  height: 36px;
+  padding: 30px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.restaurant-card .restaurant-card-container h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.restaurant-card .restaurant-card-container p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fff;
+}
+
+@media (max-width: 400px) {
+  .restaurant-card .restaurant-card-container {
+    margin-right: 6px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .restaurant-card .restaurant-card-container {
+    width: 100%;
+  }
+}
+
+.restaurant-menu {
+  position: relative;
+  height: 100vh;
+}
+
+.restaurant-menu .grey-background {
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
+}
+
+.restaurant-menu .mobile-add-button {
+  display: initial;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+}
+
+.restaurant-menu .restaurant-menu-container {
+  background-color: #353535;
+  height: calc(100% - 60px);
+  padding: 30px;
+}
+
+.restaurant-menu .restaurant-menu-container .restaurant-menu-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.restaurant-menu .restaurant-menu-container .restaurant-menu-content .desktop-add-button {
+  display: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.restaurant-menu .restaurant-menu-container .restaurant-menu-content .restaurant-info {
+  margin-bottom: 24px;
+  margin-top: 28px;
+}
+
+.restaurant-menu .restaurant-menu-container .restaurant-menu-content .restaurant-info h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #f3aa00;
+}
+
+.restaurant-menu .restaurant-menu-container .restaurant-menu-content .restaurant-info p {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #fff;
+}
+
+@media (max-width: 400px) {
+  .restaurant-menu .restaurant-menu-container {
+    height: calc(100% - 40px);
+    padding: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .restaurant-menu .grey-background {
+    display: none;
+  }
+  .restaurant-menu .mobile-add-button {
+    display: none;
+  }
+  .restaurant-menu .restaurant-menu-container {
+    height: calc(100% - 60px);
+    padding: 30px;
+  }
+  .restaurant-menu .restaurant-menu-container .restaurant-menu-content {
+    width: 100%;
+  }
+  .restaurant-menu .restaurant-menu-container .restaurant-menu-content .desktop-add-button {
+    display: initial;
+  }
+}
+
+.menu-card .menu-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu-card .menu-card-container .menu-card-line {
+  width: 10px;
+  height: 10px;
+  background-color: #f3aa00;
+  height: 168px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.menu-card .menu-card-container .menu-card-content {
+  z-index: 20;
+  background-color: #464646;
+  width: 100%;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 0px 20px 20px 0px;
+  height: 128px;
+  color: #fff;
+}
+
+.menu-card .menu-card-container .menu-card-content p {
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.menu-card .menu-card-container .menu-card-content .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.menu-card .menu-card-container .menu-card-content .title h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .menu-card .menu-card-container .menu-card-content {
+    width: 100%;
+  }
+}
+
+.new-dish {
+  height: 100vh;
+  background-color: #464646;
+}
+
+.new-dish .new-dish-container {
+  padding: 30px;
+}
+
+.new-dish .new-dish-container .new-dish-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #f3aa00;
+  margin-bottom: 24px;
+  margin-top: 28px;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form p {
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .name-input {
+  padding-left: 10px;
+  height: 20px;
+  width: 310px;
+  padding: 5px;
+  border-radius: 3px;
+  border: none;
+  color: black;
+  font-family: Nunito Sans, Regular;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .label-price-input {
+  background: white;
+  width: 310px;
+  height: 20px;
+  padding: 5px;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: text;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .label-price-input p {
+  color: black;
+  padding-left: 2px;
+  padding-right: 2px;
+  letter-spacing: 0px;
+  font-family: Nunito Sans, sans-serif;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .price-input-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .price-input {
+  border: none;
+  border-radius: 2px;
+  width: 60px;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .price-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form input {
+  border: none;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form textarea {
+  border: none;
+  border-radius: 3px;
+  resize: none;
+  padding: 5px;
+  width: 310px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form textarea:focus,
+.new-dish .new-dish-container .new-dish-content .new-dish-form input:focus {
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form p {
+  color: #fff;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .description-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: lighter;
+}
+
+.new-dish .new-dish-container .new-dish-content .new-dish-form .save-button {
+  margin-top: 80px;
+  background-color: #f3aa00;
+  border: none;
+  border-radius: 6px;
+  height: 30px;
+  width: 310px;
+  cursor: pointer;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+@media (max-width: 400px) {
+  .new-dish .new-dish-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .new-dish .new-dish-container .new-dish-content .new-dish-form {
+    display: initial;
+    text-align: initial;
+  }
+  .new-dish .new-dish-container .new-dish-content .new-dish-form .name-input {
+    height: 20px;
+    width: calc(100% - 7px);
+  }
+  .new-dish .new-dish-container .new-dish-content .new-dish-form .label-price-input {
+    width: 80px;
+  }
+  .new-dish .new-dish-container .new-dish-content .new-dish-form textarea {
+    width: calc(100% - 7px);
+  }
+  .new-dish .new-dish-container .new-dish-content .new-dish-form .save-button {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=index.css.map */
