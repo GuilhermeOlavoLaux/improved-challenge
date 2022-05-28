@@ -63,10 +63,11 @@ module.exports = {
                 if (!menuItem._id) {
                     menuItem._id = uuid()
                 }
+                menuItem.price = menuItem.price.substr(1)
+                menuItem.price = menuItem.price.substr(2)
+                console.log(menuItem)
             });
-
             restaurant.menuItems = menuItems
-
         }
 
         try {

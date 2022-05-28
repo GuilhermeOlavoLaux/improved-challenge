@@ -21,6 +21,7 @@ export default function RestaurantMenu() {
         verifyRestaurantState()
     }, [])
 
+
     function renderMenuCards() {
         const menuCards = restaurant.menuItems.map((menuItem, index) => {
             return <MenuCard key={index} menuItem={menuItem} />

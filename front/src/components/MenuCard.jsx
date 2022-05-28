@@ -1,6 +1,10 @@
-import { Fragment } from 'react'
+import { useEffect } from 'react'
+import { Fragment, useState } from 'react'
 
 export default function MenuCard({ menuItem }) {
+
+
+
   return (
     <Fragment>
       <div className='menu-card'>
@@ -13,7 +17,7 @@ export default function MenuCard({ menuItem }) {
             </div>
 
             <p>{menuItem.description}</p>
-            
+
           </div>
         </div>
       </div>

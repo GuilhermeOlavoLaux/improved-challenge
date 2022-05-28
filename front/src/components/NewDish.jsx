@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./Header";
+import { api } from "../api/Api";
 
 export default function NewDish() {
     const [name, setName] = useState("")
@@ -17,6 +18,24 @@ export default function NewDish() {
     function verifyRestaurantState() {
         if (restaurant === undefined) {
             navigate('/')
+        }
+    }
+
+    async function saveNewDish() {
+        try {
+            const menuItems = restaurant.menuItems
+            const _id = restaurant._id
+
+            const newMenuItem = {
+                name: name,
+                price: 'R$' + price,
+                description: description
+            }
+            menuItems.push(newMenuItem)
+            await api.put('/restaurants', { menuItems, _id })
+
+        } catch (error) {
+            console.error(error)
         }
     }
 
@@ -68,7 +87,7 @@ export default function NewDish() {
                                 </textarea>
 
                                 <p className="description-text">*A descrição deve conter até 200 caracteres.</p>
-                                <button className="save-button">Salvar</button>
+                                <button className="save-button" onClick={saveNewDish}>Salvar</button>
 
                             </div>
                         </div>
