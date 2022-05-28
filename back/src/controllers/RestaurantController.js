@@ -48,20 +48,26 @@ module.exports = {
 
     async updateRestaurant(request, response) {
 
-        const { id, menuItems } = request.body;
+        const { _id, menuItems } = request.body;
 
-        if (!id || !menuItems) {
+        if (!_id || !menuItems) {
             return response.status(400).json({ error: 'Missing params.' })
         }
 
-        const restaurant = await Restaurant.findById(id)
+        const restaurant = await Restaurant.findById(_id)
 
         if (!restaurant) {
             return response.status(400).json({ error: 'Restaurant not found.' })
         } else {
-            restaurant.menuItems = menuItems
-        }
+            menuItems.forEach(menuItem => {
+                if (!menuItem._id) {
+                    menuItem._id = uuid()
+                }
+            });
 
+            restaurant.menuItems = menuItems
+
+        }
 
         try {
             await restaurant.save();
