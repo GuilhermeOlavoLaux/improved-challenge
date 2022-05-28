@@ -6,6 +6,14 @@ module.exports = {
     async getRestaurants(request, response) {
         try {
             const restaurntsList = await Restaurant.find();
+
+            restaurntsList.forEach(restaurant => {
+                restaurant.menuItems.forEach(menuItem => {
+                    menuItem.price = parseFloat(menuItem.price).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+                })
+            })
+
+            
             return response.status(200).json({ restaurntsList })
         } catch (error) {
             response.status(500).json({ error: error.message })
@@ -27,6 +35,9 @@ module.exports = {
             if (!menuItem.name || !menuItem.description || !menuItem.price) {
                 return response.status(400).json({ error: 'Missing params.' })
             }
+            menuItem.price = menuItem.price.toString()
+            menuItem.price.replace(",", ".");
+
         });
 
         const restaurant = new Restaurant({
@@ -63,10 +74,10 @@ module.exports = {
                 if (!menuItem._id) {
                     menuItem._id = uuid()
                 }
-                menuItem.price = menuItem.price.substr(1)
-                menuItem.price = menuItem.price.substr(2)
-                console.log(menuItem)
+                menuItem.price = menuItem.price.replace(",", ".");
+
             });
+
             restaurant.menuItems = menuItems
         }
 

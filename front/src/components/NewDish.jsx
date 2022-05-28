@@ -28,9 +28,10 @@ export default function NewDish() {
 
             const newMenuItem = {
                 name: name,
-                price: 'R$' + price,
+                price: price,
                 description: description
             }
+
             menuItems.push(newMenuItem)
             await api.put('/restaurants', { menuItems, _id })
 

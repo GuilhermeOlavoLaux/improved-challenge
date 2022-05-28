@@ -18,20 +18,16 @@ export default function Restaurants() {
 
     useEffect(() => {
         getRestaurants()
-        refactorMoney()
     }, [])
 
 
-    function refactorMoney() {
-        restaurants.forEach(restaurant => {
-            restaurant.menuItems.forEach(menuItem => {
-                menuItem.price = menuItem.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-            })
-        })
-    }
+ 
+
+
+
+
 
     function renderRestaurantsCards() {
-        refactorMoney()
         const restaurantCards = restaurants.map((restaurant, index) => {
             return (
                 <RestaurantCard key={index} restaurant={restaurant} />

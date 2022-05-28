@@ -24,7 +24,7 @@ const RestaurnatsSchema = mongoose.Schema({
                 required: true
             },
             price: {
-                type: Number,
+                type: String,
                 required: true
             }
         }
