@@ -2,6 +2,8 @@ import { Fragment, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { api } from "../api/Api";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function NewDish() {
     const [name, setName] = useState("")
@@ -20,6 +22,29 @@ export default function NewDish() {
             navigate('/')
         }
     }
+    function notifySuccess() {
+        toast.success('Prato adicionado com sucesso', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
+    function notifyError() {
+        toast.error('Ocorreu um erro, tente novamente', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
 
     async function saveNewDish() {
         try {
@@ -34,9 +59,10 @@ export default function NewDish() {
 
             menuItems.push(newMenuItem)
             await api.put('/restaurants', { menuItems, _id })
-
+            
+            notifySuccess()
         } catch (error) {
-            console.error(error)
+            notifyError()
         }
     }
 
@@ -46,6 +72,7 @@ export default function NewDish() {
                 restaurant &&
 
                 <div className="new-dish">
+                    <ToastContainer />
                     <div className="new-dish-container">
                         <Header backButtonFlag={true}></Header>
                         <div className="new-dish-content">
@@ -53,16 +80,17 @@ export default function NewDish() {
 
                             <div className="new-dish-form">
 
-                                <p>Nome do prato</p>
+                                <label htmlFor="name-input">Nome do prato</label>
                                 <input
                                     type="text"
+                                    id="name-input"
                                     className="name-input"
                                     value={name}
                                     placeholder="Prato"
                                     onChange={(e) => setName(e.target.value)}
                                 />
                                 <div className="price-input-container">
-                                    <p>Valor</p>
+                                    <label htmlFor="price-input">Valor</label>
 
                                     <label htmlFor="price-input" className="label-price-input" >
                                         <p>R$</p>
@@ -77,9 +105,10 @@ export default function NewDish() {
                                     </label>
 
                                 </div>
-                                <p>Descrição do prato</p>
 
+                                <label htmlFor="description-text-area">Descrição do prato</label>
                                 <textarea cols="30"
+                                    id="description-text-area"
                                     rows="10"
                                     value={description}
                                     maxLength='200'

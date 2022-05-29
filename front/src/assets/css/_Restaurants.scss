@@ -19,6 +19,7 @@
     background-color: $grey-600;
     height: calc(100% - 60px);
     padding: 30px;
+    overflow-x: auto;
 
     .locals-container {
       position: relative;

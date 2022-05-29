@@ -1,6 +1,5 @@
 .restaurant-menu {
   position: relative;
-  height: 100vh;
 
   .grey-background {
     position: absolute;
@@ -19,6 +18,7 @@
   .restaurant-menu-container {
     background-color: $grey-300;
     height: calc(100% - 60px);
+    min-height: 100vh;
     padding: 30px;
 
     .restaurant-menu-content {
