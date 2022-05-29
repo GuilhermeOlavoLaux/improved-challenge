@@ -1,6 +1,5 @@
 const Restaurant = require('../model/Restaurant')
 const { v4: uuid } = require('uuid');
-const res = require('express/lib/response');
 
 module.exports = {
     async getRestaurants(request, response) {
@@ -13,7 +12,7 @@ module.exports = {
                 })
             })
 
-            
+
             return response.status(200).json({ restaurntsList })
         } catch (error) {
             response.status(500).json({ error: error.message })
@@ -36,7 +35,9 @@ module.exports = {
                 return response.status(400).json({ error: 'Missing params.' })
             }
             menuItem.price = menuItem.price.toString()
-            menuItem.price.replace(",", ".");
+            if (menuItem.price.includes(",") || menuItem.price.includes(".")) {
+                menuItem.price = menuItem.price.replace(",", ".");
+            }
 
         });
 
@@ -74,7 +75,14 @@ module.exports = {
                 if (!menuItem._id) {
                     menuItem._id = uuid()
                 }
-                menuItem.price = menuItem.price.replace(",", ".");
+
+                if (menuItem.price.includes(",") || menuItem.price.includes(".")) {
+                    menuItem.price = menuItem.price.replace(",", ".");
+                }
+                
+                if(menuItem.price.includes("R$")){
+                    menuItem.price = menuItem.price.replace("R$", '')
+                }
 
             });
 

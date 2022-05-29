@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import GreyBackground from '../assets/images/GreyBackground.png'
 
+
 export default function RestaurantMenu() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -57,11 +58,13 @@ export default function RestaurantMenu() {
                                 <div className="desktop-add-button">
                                     <FontAwesomeIcon
                                         icon={faPlusCircle}
-                                        size='2x'
+                                        size='3x'
                                         color='#f3aa00'
                                         onClick={() => navigate('/new-dish', { state: { restaurant: restaurant } })}
                                     ></FontAwesomeIcon>
                                 </div>
+
+                                
                             </div>
 
                             {renderMenuCards()}

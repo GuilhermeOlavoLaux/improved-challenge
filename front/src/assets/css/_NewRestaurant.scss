@@ -1,0 +1,15 @@
+.new-restaurant {
+  height: 100vh;
+  background-color: $grey-300;
+
+  .new-restaurant-container {
+    padding: 30px;
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      color: $primary-yellow;
+      margin-bottom: 24px;
+      margin-top: 28px;
+    }
+  }
+}
