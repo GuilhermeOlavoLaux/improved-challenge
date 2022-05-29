@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 function connectToDataBase() {
-    mongoose.connect('mongodb+srv://admin:123@cluster0.trbtvhy.mongodb.net/?retryWrites=true&w=majority', {
+    mongoose.connect('mongodb+srv://admin:123@cluster0.trbtvhy.mongodb.net/?retryWrites=true&w=majority&ssl=true', {
         useNewUrlParser: true,
     })
 
