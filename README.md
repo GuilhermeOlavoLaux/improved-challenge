@@ -1,7 +1,7 @@
 # improved-challenge Wine Locals
 
 ## 👩🏻‍💻 Sobre o Projeto:
-Desenvolvi um desafio aprimorado. Basicamente criei uma API com Node, MongoDB e Express e no front do projeto consumi os dados da mesma. 
+Desenvolvi um desafio aprimorado. Basicamente criei uma API com Node, MongoDB e Express e no front do projeto consumi os dados da mesma. Além disso, fiz pequenas correções e aprimorei o projeto anterior.
 
 ## 🛠️ Construído com
 * React 
